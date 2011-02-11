@@ -131,7 +131,7 @@ class MultilingualPagesExtension < Radiant::Extension
     'is' => 'Íslenska',
     'it' => 'Italiano',
     'iu' => 'ᐃᓄᒃᑎᑐᑦ',
-    'ja' => '日本語 (にほんご／にっぽんご)',
+    'ja' => '日本語',
     'jv' => 'basa Jawa',
     'ka' => 'ქართული',
     'kg' => 'KiKongo',
@@ -238,7 +238,7 @@ class MultilingualPagesExtension < Radiant::Extension
     'yi' => 'ייִדיש',
     'yo' => 'Yorùbá',
     'za' => 'Saɯ cueŋƅ, Saw cuengh',
-    'zh' => '中文 (Zhōngwén), 汉语, 漢語',
+    'zh' => '中文',
     'zu' => 'isiZulu'
   }
 end
