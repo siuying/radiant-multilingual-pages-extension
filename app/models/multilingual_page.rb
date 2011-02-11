@@ -25,8 +25,6 @@ class MultilingualPage < Page
   def child_url(child, language=nil)
     if language.nil?
       super(child)
-    elsif !parent?
-      clean_url(url + '/' + child.slug(language))
     else
       clean_url(url(language) + '/' + child.slug(language))
     end
