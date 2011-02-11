@@ -48,7 +48,7 @@ module NonMultilingualPageExtensions
     MultilingualPagesExtension::USE_LANGUAGE_DETECTION and (not parent?) and Thread.current[:requested_language].nil?
   end
   
-  def languages
+  def multilingual_languages
     langs = (request.env["HTTP_ACCEPT_LANGUAGE"] || "").split(/[,\s]+/)
     langs_with_weights = langs.map do |ele|
       both = ele.split(/;q=/)
@@ -59,7 +59,7 @@ module NonMultilingualPageExtensions
   end
 
   def location
-    language = languages.detect{|l| MultilingualPagesExtension::AVAILABLE_LANGUAGES.include?(l)} || MultilingualPagesExtension::DEFAULT_LANGUAGE
+    language = multilingual_languages.detect{|l| MultilingualPagesExtension::AVAILABLE_LANGUAGES.include?(l)} || MultilingualPagesExtension::DEFAULT_LANGUAGE
     path = clean_url("#{request.path}/#{MultilingualPagesExtension::NON_MULTILINGUAL_ROUTE}#{language}")
     "#{request.protocol}#{request.host_with_port}#{path}" << (request.query_string.blank? ? '' : "?#{request.query_string}")
   end  
